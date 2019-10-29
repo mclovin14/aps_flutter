@@ -1,35 +1,17 @@
 class Post{
 
-  int _userId;
-  int _id;
-  String _title;
-  String _body;
+  int id;
+  String chamadoDescricao;
+  String local;
+  bool ativo;
+  String usuario;
 
-  Post(this._userId, this._id, this._title, this._body);
 
-  String get body => _body;
+  Post( this.id, this.chamadoDescricao, this.local, this.ativo, this.usuario);
 
-  set body(String value) {
-    _body = value;
-  }
 
-  String get title => _title;
 
-  set title(String value) {
-    _title = value;
-  }
 
-  int get id => _id;
-
-  set id(int value) {
-    _id = value;
-  }
-
-  int get userId => _userId;
-
-  set userId(int value) {
-    _userId = value;
-  }
 
 
 }

@@ -1,25 +1,26 @@
 import 'dart:developer';
+import 'dart:convert';
 import 'package:atm_project/Cliente.dart';
 import 'package:atm_project/Contato.dart';
 import 'package:atm_project/Empresa.dart';
 import 'package:atm_project/Servico.dart';
+import 'package:atm_project/TLogin.dart';
+import 'package:atm_project/Utils.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: Home(),
+    home: TLogin(),
     debugShowCheckedModeBanner: false,
   ));
 }
+class Home extends StatelessWidget {
+  Utils token ;
 
-class Home extends StatefulWidget {
-  @override
-  _HomeState createState() => _HomeState();
-}
+  Home({Key key, @required this.token}) : super(key: key);
 
-class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,34 +41,34 @@ class _HomeState extends State<Home> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 GestureDetector(
-                  onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => Cliente() //função anonima curta que instacia a tela secudaria
-                      )
-                  ),
-                  child: Column(
-                    children: <Widget>[
-                      Icon(
-                          Icons.add_call,
-                          size: 100,
-                          color: Colors.blueAccent
-                      ),
-                      Text("DENUNCIE",
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.blueAccent,
-                          fontWeight: FontWeight.bold,
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Cliente() //função anonima curta que instacia a tela secudaria
+                        )
+                    ),
+                    child: Column(
+                      children: <Widget>[
+                        Icon(
+                            Icons.add_call,
+                            size: 100,
+                            color: Colors.blueAccent
                         ),
-                      )
-                    ],
-                  )
+                        Text("DENUNCIE",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.blueAccent,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )
+                      ],
+                    )
                 ),
                 GestureDetector(
                   onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => Servico() //função anonima curta que instacia a tela secudaria
+                          builder: (context) => new Servico(token: new Utils(token.recuperarToken)) //função anonima curta que instacia a tela secudaria
                       )
                   ),
                   child: Column(
@@ -146,3 +147,4 @@ class _HomeState extends State<Home> {
     );
   }
 }
+
