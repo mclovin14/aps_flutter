@@ -28,9 +28,18 @@ dependencies:
   material_design_icons_flutter: 3.2.4595
   image_picker:
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.7.4
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "dev_assets/nmb.jpg"
+  adaptive_icon_backgroung: "#ffffff"
+  adaptive_icon_foreground: "dev_assets/nmb_adaptive.jpg"
 
 
 # For information on the generic Dart part of this file, see the
