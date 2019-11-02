@@ -25,7 +25,6 @@ class _AuthLoginState extends State<AuthLogin> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 new CircularProgressIndicator(
-                  backgroundColor: Colors.redAccent,
                 ),
               ],
             ),

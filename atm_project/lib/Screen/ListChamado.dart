@@ -69,7 +69,6 @@ class ListChamado extends StatelessWidget {
               case ConnectionState.waiting:
                 return Center(
                   child: CircularProgressIndicator(
-                    backgroundColor: Colors.redAccent,
                   ),
                 );
                 break;

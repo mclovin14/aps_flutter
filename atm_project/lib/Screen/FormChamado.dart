@@ -55,7 +55,6 @@ class _FormChamadoState extends State<FormChamado> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 new CircularProgressIndicator(
-                  backgroundColor: Colors.redAccent,
                 ),
               ],
             ),

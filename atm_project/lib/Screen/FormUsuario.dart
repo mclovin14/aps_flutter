@@ -9,12 +9,29 @@ class FormUsuario extends StatefulWidget {
 }
 
 class _FormUsuarioState extends State<FormUsuario> {
+
   static var _urlBase = "https://aps-user-api.herokuapp.com";
   TextEditingController _nomeController = TextEditingController();
   TextEditingController _loginController = TextEditingController();
   TextEditingController _senhaController = TextEditingController();
 
   Future<dynamic> _post(BuildContext context) async {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return Dialog(
+            backgroundColor: Colors.transparent,
+            child: new Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                new CircularProgressIndicator(
+                ),
+              ],
+            ),
+          );
+        }
+    );
+
     var nomeCompleto = _nomeController.text;
     var login = _loginController.text;
     var senha = _senhaController.text;

@@ -15,6 +15,7 @@ class _EmpresaState extends State<Empresa> {
         backgroundColor: Colors.redAccent,
       ),
       body: Container(
+        color: Colors.white,
         padding: EdgeInsets.only(bottom: 25, top: 10),
         child: Column(
           children: <Widget>[
@@ -41,7 +42,7 @@ class _EmpresaState extends State<Empresa> {
               child: Container(
                 padding: EdgeInsets.all(40),
                 child:  Text(
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                  "A NMB é uma organização que preza pelo meio ambiente. Acabamos de criar este App para que a pessoas façam chamados caso vejam queimadas. Ao abrir esse chamado, enviaremos uma equipe especializada ao local para sanar o problema. A NMB pede a ajuda e calobaração de todos para que possamos proteger o meio ambiente. Caso se sinta comprometod com a causa, entre em contato conosco. Assim analizaremos o seu histórico e podemos de adicionar aos usuários administradores. Assim você poderá acompanhar os últimos chamados conosco.",
                   style: TextStyle(
                     fontSize: 15,
                     color: Colors.black,

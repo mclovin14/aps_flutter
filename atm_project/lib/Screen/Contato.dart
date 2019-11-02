@@ -10,6 +10,7 @@ class Contato extends StatelessWidget {
         backgroundColor: Colors.green,
       ),
       body: Container(
+        color: Colors.white,
         padding: EdgeInsets.only(bottom: 25, top: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -23,7 +24,7 @@ class Contato extends StatelessWidget {
                   Text(
                     "Contato",
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 23,
                       color: Colors.green,
                       fontWeight: FontWeight.bold,
                     ),
@@ -34,9 +35,9 @@ class Contato extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(top: 20, bottom: 20),
               child: Text(
-                "Email: consultoriaatm@gmail.com",
+                "Email: nmb.org@nmb.com",
                 style: TextStyle(
-                  fontSize: 15,
+                  fontSize: 23,
                   color: Colors.black,
                   fontWeight: FontWeight.normal,
                 ),
@@ -48,19 +49,7 @@ class Contato extends StatelessWidget {
               child: Text(
                 "Telefone: (16) 3333-2222",
                 style: TextStyle(
-                  fontSize: 15,
-                  color: Colors.black,
-                  fontWeight: FontWeight.normal,
-                ),
-                textAlign: TextAlign.justify,
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.zero,
-              child: Text(
-                "Celular: (16) 99999-8888",
-                style: TextStyle(
-                  fontSize: 15,
+                  fontSize: 23,
                   color: Colors.black,
                   fontWeight: FontWeight.normal,
                 ),
