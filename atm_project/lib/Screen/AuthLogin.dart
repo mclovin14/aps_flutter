@@ -11,7 +11,7 @@ class AuthLogin extends StatefulWidget {
 }
 
 class _AuthLoginState extends State<AuthLogin> {
-  static var _urlBase = "https://funcionarios-tst-api.herokuapp.com";
+  String _urlBase = Utils.Urlbase();
   TextEditingController _loginController = TextEditingController();
   TextEditingController _senhaController = TextEditingController();
 
@@ -24,7 +24,9 @@ class _AuthLoginState extends State<AuthLogin> {
             child: new Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                new CircularProgressIndicator(),
+                new CircularProgressIndicator(
+                  backgroundColor: Colors.redAccent,
+                ),
               ],
             ),
           );

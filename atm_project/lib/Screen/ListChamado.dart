@@ -12,7 +12,7 @@ class ListChamado extends StatelessWidget {
   Utils token;
 
   ListChamado({Key key, @required this.token}) : super(key: key);
-  String _urlBase = "https://funcionarios-tst-api.herokuapp.com";
+  String _urlBase = Utils.Urlbase();
 
   Future<List<Chamado>> _recuperarPostagens(BuildContext context) async {
     var teste = Utils.parseJwt(token.recuperarToken);
@@ -68,7 +68,9 @@ class ListChamado extends StatelessWidget {
               case ConnectionState.none:
               case ConnectionState.waiting:
                 return Center(
-                  child: CircularProgressIndicator(),
+                  child: CircularProgressIndicator(
+                    backgroundColor: Colors.redAccent,
+                  ),
                 );
                 break;
               case ConnectionState.active:

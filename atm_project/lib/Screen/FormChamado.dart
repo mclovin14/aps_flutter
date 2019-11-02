@@ -17,7 +17,7 @@ class FormChamado extends StatefulWidget {
 
 class _FormChamadoState extends State<FormChamado> {
   File _image;
-  static var _urlBase = "https://funcionarios-tst-api.herokuapp.com";
+  String _urlBase = Utils.Urlbase();
   TextEditingController _chamadoDescricaoController = TextEditingController();
   TextEditingController _localController = TextEditingController();
 
@@ -45,6 +45,23 @@ class _FormChamadoState extends State<FormChamado> {
   }
 
   Future<dynamic> _post(BuildContext context) async {
+
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return Dialog(
+            backgroundColor: Colors.transparent,
+            child: new Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                new CircularProgressIndicator(
+                  backgroundColor: Colors.redAccent,
+                ),
+              ],
+            ),
+          );
+        }
+    );
     String imagem;
     if (_image != null) {
       List<int> imageBytes = _image.readAsBytesSync();
@@ -77,11 +94,13 @@ class _FormChamadoState extends State<FormChamado> {
             color: Colors.red,
             textColor: Colors.white,
             onPressed: () {
-              Navigator.push(
-                  context,
+              Navigator.of(context).pushAndRemoveUntil(
                   MaterialPageRoute(
                       builder: (context) =>
-                          Home(token: new Utils(widget.token.recuperarToken))));
+                      new Home(
+                          token: new Utils(widget.token.recuperarToken) //função anonima curta que instacia a tela secudaria
+                      )),  (Route<dynamic> route) => false
+              );
             },
           )
         ],

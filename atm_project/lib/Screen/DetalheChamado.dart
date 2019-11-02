@@ -21,7 +21,7 @@ class DetalheChamado extends StatefulWidget {
 
 class _DetalheChamadoState extends State<DetalheChamado> {
   Image _image;
-  static var _urlBase = "https://funcionarios-tst-api.herokuapp.com";
+  String _urlBase = Utils.Urlbase();
 
   Future<ChamadoDetalhe> _recuperarPostagem() async {
     var teste = Utils.parseJwt(widget.token.recuperarToken);
@@ -61,11 +61,13 @@ class _DetalheChamadoState extends State<DetalheChamado> {
             color: Colors.red,
             textColor: Colors.white,
             onPressed: () {
-              Navigator.push(
-                  context,
+              Navigator.of(context).pushAndRemoveUntil(
                   MaterialPageRoute(
                       builder: (context) =>
-                          Home(token: new Utils(widget.token.recuperarToken))));
+                      new Home(
+                          token: new Utils(widget.token.recuperarToken) //função anonima curta que instacia a tela secudaria
+                      )),  (Route<dynamic> route) => false
+              );
             },
           )
         ],
@@ -139,7 +141,7 @@ class _DetalheChamadoState extends State<DetalheChamado> {
                                   ),
                                   Padding(
                                     padding: EdgeInsets.only(bottom: 8),
-                                    child: Text("Usuário da Denúncia: ${chamado.local}",
+                                    child: Text("Usuário da Denúncia: ${chamado.usuario}",
                                       style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
                                   ),
 
