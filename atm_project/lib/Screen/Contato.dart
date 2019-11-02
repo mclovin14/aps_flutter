@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Cliente extends StatefulWidget {
-  @override
-  _ClienteState createState() => _ClienteState();
-}
-
-class _ClienteState extends State<Cliente> {
+class Contato extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Disk denúncia"),
-        backgroundColor: Colors.blueAccent,
+        automaticallyImplyLeading: false,
+        title: Text("Contato"),
+        backgroundColor: Colors.green,
       ),
       body: Container(
         padding: EdgeInsets.only(bottom: 25, top: 10),
@@ -23,12 +19,12 @@ class _ClienteState extends State<Cliente> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Image.asset("imagens/detalhe_cliente.png"),
+                  Image.asset("imagens/detalhe_contato.png"),
                   Text(
-                    "Nossos Clientes",
+                    "Contato",
                     style: TextStyle(
                       fontSize: 20,
-                      color: Colors.lightGreen,
+                      color: Colors.green,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -36,13 +32,9 @@ class _ClienteState extends State<Cliente> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 20, right: 260),
-              child: Image.asset("imagens/cliente1.png"),
-            ),
-            Padding(
-              padding: EdgeInsets.only(right: 100),
+              padding: EdgeInsets.only(top: 20, bottom: 20),
               child: Text(
-                "Empresa de Software",
+                "Email: consultoriaatm@gmail.com",
                 style: TextStyle(
                   fontSize: 15,
                   color: Colors.black,
@@ -52,13 +44,21 @@ class _ClienteState extends State<Cliente> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 20, right: 260),
-              child: Image.asset("imagens/cliente2.png"),
+              padding: EdgeInsets.zero,
+              child: Text(
+                "Telefone: (16) 3333-2222",
+                style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.black,
+                  fontWeight: FontWeight.normal,
+                ),
+                textAlign: TextAlign.justify,
+              ),
             ),
             Padding(
-              padding: EdgeInsets.only(right: 100),
+              padding: EdgeInsets.zero,
               child: Text(
-                "Empresa de Auditoria",
+                "Celular: (16) 99999-8888",
                 style: TextStyle(
                   fontSize: 15,
                   color: Colors.black,
@@ -73,3 +73,5 @@ class _ClienteState extends State<Cliente> {
     );
   }
 }
+
+

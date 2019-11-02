@@ -10,6 +10,7 @@ class _EmpresaState extends State<Empresa> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text("Sobre a NMB"),
         backgroundColor: Colors.redAccent,
       ),
