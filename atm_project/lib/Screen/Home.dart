@@ -92,11 +92,13 @@ class Home extends StatelessWidget {
                             color: Colors.red,
                             textColor: Colors.white,
                             onPressed: () {
-                              Navigator.push(
-                                  context,
+                              Navigator.of(context).pushAndRemoveUntil(
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          Home(token: new Utils(token.recuperarToken))));
+                                      new Home(
+                                          token: new Utils(token.recuperarToken) //função anonima curta que instacia a tela secudaria
+                                      )),  (Route<dynamic> route) => false
+                              );
                             },
                           )
                         ],
